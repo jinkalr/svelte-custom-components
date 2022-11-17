@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { imask } from '@imask/svelte';
 	import { createEventDispatcher, onMount } from 'svelte';
-	export let label: null | string = null;
+	export let placeholder: null | string = null;
 	export let value: number | null = null;
 	export let max: number = 999999999999999;
 	export let min: number = 0;
@@ -123,7 +123,7 @@
 	on:input={validate}
 	on:blur={onBlur}
 	on:focus={onFocus}
-	placeholder={label}
+	{placeholder}
 	style={customStyle}
 	class={customClass}
 />
