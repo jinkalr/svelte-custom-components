@@ -20,7 +20,7 @@
 		fvalue = null;
 	}
 
-	$: if (value && !lastCharDotWithZero.test(value.toString())) {
+	$: if (value !== null && value > -1 && !lastCharDotWithZero.test(value.toString())) {
 		fvalue = value.toString().replace(commaSelector, ',');
 	}
 
@@ -104,7 +104,10 @@
 		) {
 			value = min;
 			dispatch('change', value);
-		} else if (fvalue !== null && firstCharDot.test(fvalue.toString())) {
+		} else if (
+			fvalue !== null &&
+			(lastCharDotWithZero.test(fvalue.toString()) || firstCharDot.test(fvalue.toString()))
+		) {
 			dispatch('change', Number(fvalue.toString()));
 		}
 		isfocus = false;
