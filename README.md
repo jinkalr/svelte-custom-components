@@ -1,114 +1,219 @@
-# svelte-custom-components
+# Svelte Custom Components
+
 This is library for Vanilla Svelte custom components with TS. Which Making your task easy to implement. 
 
-# How to use
+```
+<script>
 
-**How to install**
+    import CurrencyInput from "svelte-custom-components/CurrencyInput.svelte";
 
-`npm install svelte-custom-components`
+</script>
 
-**How to use**
+<CurrencyInput value={0} />
 
-`import {<ComponentName>} from 'svelte-custom-components/<ComponentName>.svelte'`
-
-`<ComponentName/>`
-
-<br/>
-
-# List of Components
-
-<details><summary><b style='font-size:22px'>1. Currency Input</b></summary>
-
-<div style='padding-left:50px'>
+```
 
 <br/>
 
-### **__Variables accepts__**
+# Installation 
+
+This module is for Svelte project only. 
+
+Before installing this, make sure your project is ready to run.
+
+Install this module using following command.
+
+```
+$ npm i svelte-custom-components
+```
 
 <br/>
 
-1.1. `placeholder`
+# Features
 
->**Information**: _To show the tex as place holder_
-
->**Datatype**: _null | string_
-
->**Default value**: _null_
+- Ready to use components
+- Supports 2-way binding
+- Fully customizable components
 
 <br/>
 
-1.2. `value`
+# Components
 
->**Information**: _Actual value of element_
-
->**Datatype**: _null | number_
-
->**Default value**: _null_
+1. <a href="#CurrencyInput"> CurrencyInput </a>
 
 <br/>
 
-1.3. `max`
+<div id="CurrencyInput">
 
->**Information**: _Maximum number can be accepted_
+<hr/>
 
->**Datatype**:  _number_
+## CurrencyInput
 
->**Default value**: _999999999999999_
-
-<br/>
-
-1.4. `min`
-
->**Information**: Minimum number can be accepted_
-
->**Datatype**:  _number_
-
->**Default value**: _0_
+- Currency input is component for currency value.
+- It will only accept Numeric value and also supports Decimal
 
 <br/>
 
-1.5. `scale`
+> Variables Accepted
 
->**Information**: _Count to decimal values it can accept_
-
->**Datatype**:  _number_
-
->**Default value**: _0_
+<table >
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                value
+            </td>
+            <td>
+                nullable | number
+            </td>
+            <td>
+                0
+            </td>
+        </tr>
+        <tr>
+            <td>
+                placeholder
+            </td>
+            <td>
+                nullable | string
+            </td>
+            <td>
+                null
+            </td>
+        </tr>
+        <tr>
+            <td>
+                max
+            </td>
+            <td>
+                number
+            </td>
+            <td>
+                999999999999999
+            </td>
+        </tr>
+        <tr>
+            <td>
+                min
+            </td>
+            <td>
+                number
+            </td>
+            <td>
+                0
+            </td>
+        </tr>
+        <tr>
+            <td>
+                scale
+            </td>
+            <td>
+                number
+            </td>
+            <td>
+                0
+            </td>
+        </tr>
+        <tr>
+            <td>
+                customStyle
+            </td>
+            <td>
+                string
+            </td>
+            <td>
+                ''
+            </td>
+        </tr>
+        <tr>
+            <td>
+                customClass
+            </td>
+            <td>
+                string
+            </td>
+            <td>
+                ''
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 <br/>
 
-1.6. `customStyle`
+> Methods Dispatch
 
->**Information**: _Apply your custom css directly to the element_
 
->**Datatype**:  _string_
+<table >
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Return data </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                change
+            </td>
+            <td>
+                nullable | number
+            </td>
+            <td>
+                Updated value of CurrencyInput
+            </td>
+        </tr>        
+    </tbody>
+</table>
 
->**Default value**: _''_
+> Example
 
 <br/>
 
-1.7. `customClass`
+- Simple Currency Input demo
 
->**Information**: _Apply your custom class directly to the element_
+```
+<script>
+    import CurrencyInput from "svelte-custom-components/CurrencyInput.svelte";
 
->**Datatype**:  _string_
+    let myValue = 0;
+    let placeholder = "Enter currency here.";
 
->**Default value**: _''_
+</script>
+
+<CurrencyInput bind:value={myValue} placeholder={placeholder}></CurrencyInput>
+<br/>
+myValue = {myValue}
+
+```
 
 <br/>
 
-### **Dispatch methods**
+- Advance Currency Input demo
 
-- `change`
+```
+<script>
+    import CurrencyInput from "svelte-custom-components/CurrencyInput.svelte";
 
->Returns new updated value of "`Value`"
+    let value = 0;
+    let placeholder = "Enter currency here.";
+    let scale = 2;
+    let min = 0;
+    let max = 1000000;
+    
+</script>
 
+<CurrencyInput bind:value {placeholder} {scale} {min} {max}></CurrencyInput>
 <br/>
+value = {value}
+
+```
+
 </div>
-</details>
-
-<br/>
-
-# Credits
-
-This library uses [IMask](https://github.com/uNmAnNeR/imaskjs) for all of its components. IMask provides masking for various programing languages.
