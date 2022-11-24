@@ -42,7 +42,7 @@
       <div class="mb-3 xl:w-96">
         <CurrencyInput
           bind:value={ComponentValue}
-          customClass="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          customClass="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight"
         />
       </div>
       <div class="mb-3 xl:w-96">
