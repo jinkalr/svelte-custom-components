@@ -37,6 +37,7 @@
 				detail.data !== null &&
 				!fvalue?.toString().includes('.')
 			) {
+				fvalue = detail.data;
 				value = Number(detail.data);
 			}
 		} else {
@@ -45,6 +46,7 @@
 				!value?.toString().includes('.') &&
 				detail.data !== '.'
 			) {
+				fvalue = detail.data;
 				value = Number(detail.data);
 			}
 		}
@@ -90,8 +92,8 @@
 		dispatch('change', value);
 	}
 
-	function keyUp({ detail: val }) {
-		if (val.target.value === '' && value !== null) {
+	function keyUp(detail: any ) {
+		if (value !== null && detail.target.value === '') {
 			dispatch('change', null);
 		}
 	}

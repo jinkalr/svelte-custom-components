@@ -1,10 +1,18 @@
 # **CHANGE LOG**
 
+## Version 1.2.1 - 21th Nov 2022
+
+- 0 repetative bug fix in any scale.
+
+<br/>
+
 ## Version 1.2.0 - 21th Nov 2022
 
 - Updated Readme
 - Added keywords in package.json
 - Upgraded UI for Dev
+
+<br/>
 
 ## Version 1.1.1 - 18th Nov 2022
 
