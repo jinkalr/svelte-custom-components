@@ -1,5 +1,12 @@
-<script>
+<script lang="ts">
     import "./app.css"
+    import TopNavBar from "./lib/Pages/TopNavBar.svelte";
+    import Components from "./lib/Pages/Components.svelte";
+    let showComponent: boolean = false;
 </script>
 
-<h1 class="text-3xl font-bold underline">Svelte Custom Components</h1>
+<TopNavBar bind:showComponent/>
+
+{#if  showComponent}
+    <Components/>
+{/if}
