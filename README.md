@@ -169,7 +169,10 @@ $ npm i svelte-custom-components
             <td>
                 Updated value of CurrencyInput
             </td>
-        </tr>        
+        </tr> 
+        <tr>
+        <td colspan=3>Please do handle this above Dispatch if you are using Scale > 0.</td>
+        </tr>       
     </tbody>
 </table>
 
@@ -207,10 +210,15 @@ myValue = {myValue}
     let scale = 2;
     let min = 0;
     let max = 1000000;
+
+    function handleChange(newValue:any)
+    {
+        value = newValue.detail
+    }
     
 </script>
 
-<CurrencyInput bind:value {placeholder} {scale} {min} {max}></CurrencyInput>
+<CurrencyInput bind:value {placeholder} {scale} {min} {max} on:change={handleChange}></CurrencyInput>
 <br/>
 value = {value}
 

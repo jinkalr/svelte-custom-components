@@ -1,6 +1,6 @@
 {
 	"name": "svelte-custom-components",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"author": "It Path Solutions Pvt. Ltd.",
 	"scripts": {
 		"dev": "vite dev",
@@ -35,7 +35,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@imask/svelte": "^6.4.3"
+		"@imask/svelte": "^6.4.2",
+		"@tsconfig/svelte": "^3.0.0"
 	},
 	"repository": {
 		"type": "git",
@@ -44,9 +45,10 @@
 	"keywords": [
 		"svelte",
 		"custom",
-		"components",
+		"component",
 		"currencyinput",
 		"currency",
-		"imask"
+		"imask",
+		"library"
 	]
 }

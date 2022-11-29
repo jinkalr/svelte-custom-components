@@ -30,14 +30,13 @@
 		}
 	});
 
-	export function validate(detail: any) {
+	export function validate(detail: { data: string | null }) {
 		if (scale > 0) {
 			if (
 				fvalue?.toString().startsWith('0') &&
 				detail.data !== null &&
 				!fvalue?.toString().includes('.')
 			) {
-				fvalue = detail.data;
 				value = Number(detail.data);
 			}
 		} else {
@@ -46,7 +45,6 @@
 				!value?.toString().includes('.') &&
 				detail.data !== '.'
 			) {
-				fvalue = detail.data;
 				value = Number(detail.data);
 			}
 		}
@@ -92,10 +90,12 @@
 		dispatch('change', value);
 	}
 
-	function keyUp(detail: any ) {
-		if (value !== null && detail.target.value === '') {
+	function keyUp(val: { target: { value: string } }) {
+		if (val.target.value === '' && value !== null) {
+			value = null;
 			dispatch('change', null);
 		}
+		dispatch('keyup');
 	}
 
 	const onBlur = () => {
@@ -110,7 +110,7 @@
 			fvalue !== null &&
 			(lastCharDotWithZero.test(fvalue.toString()) || firstCharDot.test(fvalue.toString()))
 		) {
-			dispatch('change', Number(fvalue.toString()));
+			dispatch('change', Number(fvalue.toString().replaceAll(',', '')));
 		}
 		isfocus = false;
 	};
