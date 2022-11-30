@@ -1,6 +1,13 @@
 # **CHANGE LOG**
 
-## Version 1.2.1 - 21th Nov 2022
+## Version 1.2.2 - 29th Nov 2022
+
+- Fixed TS support issue in Component
+- Optimized CurrencyInput code
+
+<br/>
+
+## Version 1.2.1 - 24th Nov 2022
 
 - 0 repetative bug fix in any scale.
 
