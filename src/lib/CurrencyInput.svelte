@@ -93,7 +93,7 @@
 	function keyUp(val: { target: { value: string } }) {
 		if (val.target.value === '' && value !== null) {
 			value = null;
-			dispatch('change', null);
+			dispatch('change', value);
 		}
 		dispatch('keyup');
 	}

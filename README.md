@@ -37,6 +37,12 @@ $ npm i svelte-custom-components
 
 <br/>
 
+# Demo
+
+[Live Demo](https://jinkalr.github.io/svelte-custom-components/)
+
+<br/>
+
 # Components
 
 1. <a href="#CurrencyInput"> CurrencyInput </a>
@@ -225,3 +231,5 @@ value = {value}
 ```
 
 </div>
+
+
