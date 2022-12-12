@@ -1,3 +1,3 @@
 export enum ComponentList {
-    CurrencyInput = "Currency Input"
+	CurrencyInput = 'Currency Input'
 }

@@ -1,6 +1,6 @@
 # Svelte Custom Components
 
-This is library for Vanilla Svelte custom components with TS. Which Making your task easy to implement. 
+This is library for Vanilla Svelte custom components with TS. Which Making your task easy to implement.
 
 ```
 <script>
@@ -15,9 +15,9 @@ This is library for Vanilla Svelte custom components with TS. Which Making your 
 
 <br/>
 
-# Installation 
+# Installation
 
-This module is for Svelte project only. 
+This module is for Svelte project only.
 
 Before installing this, make sure your project is ready to run.
 
@@ -155,7 +155,6 @@ $ npm i svelte-custom-components
 
 > Methods Dispatch
 
-
 <table >
     <thead>
         <tr>
@@ -221,7 +220,7 @@ myValue = {myValue}
     {
         value = newValue.detail
     }
-    
+
 </script>
 
 <CurrencyInput bind:value {placeholder} {scale} {min} {max} on:change={handleChange}></CurrencyInput>
@@ -231,5 +230,3 @@ value = {value}
 ```
 
 </div>
-
-

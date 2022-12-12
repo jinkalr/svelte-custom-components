@@ -1,5 +1,12 @@
 # **CHANGE LOG**
 
+## Version 1.2.3 - 12th December 2022
+
+- Fixed extra decimal Value pass.
+- Wrapped common conversion to Functions.
+
+<br/>
+
 ## Version 1.2.2 - 29th Nov 2022
 
 - Fixed TS support issue in Component
@@ -23,8 +30,8 @@
 
 ## Version 1.1.1 - 18th Nov 2022
 
-- Revised CurrencyInput 
-    - In scale > 0, Auto replace to minimum did not show 0, when min value is set to 0
+- Revised CurrencyInput
+- In scale > 0, Auto replace to minimum did not show 0, when min value is set to 0
 - Added ChangeLog support
 
 <br/>

@@ -38,6 +38,12 @@
 				!fvalue?.toString().includes('.')
 			) {
 				value = Number(detail.data);
+			} else if (
+				fvalue !== null &&
+				currencyToNumber(fvalue).split('.')[1] !== undefined &&
+				currencyToNumber(fvalue).split('.')[1].length > scale
+			) {
+				fvalue = numberToCurrency(value);
 			}
 		} else {
 			if (
@@ -70,8 +76,7 @@
 	};
 
 	function accept({ detail: maskRef }) {
-		value =
-			scale > 0 ? Number(maskRef.unmaskedValue.toString().replaceAll(',', '')) : maskRef.typedValue;
+		value = scale > 0 ? Number(currencyToNumber(maskRef.unmaskedValue)) : maskRef.typedValue;
 	}
 
 	function complete({ detail: maskRef }) {
@@ -80,7 +85,7 @@
 				value =
 					lastCharDotWithZero.test(fvalue.toString()) || firstCharDot.test(fvalue.toString())
 						? fvalue.toString()
-						: Number(maskRef.unmaskedValue.toString().replaceAll(',', ''));
+						: Number(currencyToNumber(maskRef.unmaskedValue));
 			} else {
 				value = maskRef.typedValue;
 			}
@@ -110,12 +115,21 @@
 			fvalue !== null &&
 			(lastCharDotWithZero.test(fvalue.toString()) || firstCharDot.test(fvalue.toString()))
 		) {
-			dispatch('change', Number(fvalue.toString().replaceAll(',', '')));
+			dispatch('change', Number(currencyToNumber(fvalue)));
 		}
 		isfocus = false;
 	};
+
 	const onFocus = () => {
 		isfocus = true;
+	};
+
+	const numberToCurrency = (value) => {
+		return value?.toString().replace(commaSelector, ',');
+	};
+
+	const currencyToNumber = (value) => {
+		return value?.toString().replaceAll(',', '');
 	};
 </script>
 

@@ -1,6 +1,6 @@
 {
 	"name": "svelte-custom-components",
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"author": "It Path Solutions Pvt. Ltd.",
 	"scripts": {
 		"dev": "vite dev",

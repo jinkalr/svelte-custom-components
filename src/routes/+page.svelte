@@ -22,7 +22,7 @@
 <br />
 
 {#if currentComponent === ComponentList.CurrencyInput}
-	<CurrencyInput bind:value scale={0} on:change={handleChange} />
+	<CurrencyInput bind:value scale={2} on:change={handleChange} />
 	<br />
 	Output: {value}
 {/if}
