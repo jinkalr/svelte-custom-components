@@ -6,7 +6,7 @@
     showNavigation = !showNavigation;
   }
   function toggleShowComponent() {
-    showComponent = !showComponent;
+    showComponent = true;
     showNavigation = showNavigation? !showNavigation : showNavigation;
   }
 </script>
