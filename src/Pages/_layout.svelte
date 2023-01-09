@@ -7,7 +7,7 @@
   $: cls = value ? "" : "hidden";
 </script>
 
-<div>
+<div data-theme="light">
   <div class="drawer drawer-mobile">
     <input
       id="main-drawer"
@@ -17,7 +17,7 @@
     />
     <div class="drawer-overlay {cls}" on:click={() => (value = false)} />
     <div
-      class="drawer-content flex-col items-center justify-center bg-primary-content"
+      class="drawer-content flex-col items-center justify-center"
     >
       <TopNavPanel />
       <div class="overflow p-3">
